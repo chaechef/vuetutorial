@@ -4,8 +4,9 @@ import CurrentTime from './Current_time';
 function App() {
   return (
     <div className="App">
-      <h2>stack life!</h2>
         <CurrentTime />
+
+
     </div>
   );
 }
