@@ -1,0 +1,8 @@
+.Current_time {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    border: 1px solid black;
+    width: 500px;
+}
