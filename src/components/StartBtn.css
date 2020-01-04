@@ -8,3 +8,17 @@
     border-radius: 10px;
     margin: 10px;
   }
+
+  .StartBtn {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  
+  .StartBtn:hover {
+    background-color: rgb(45, 132, 202); /* Green */
+    color: #F6d55c;
+  }
+
+  .StartBtn:focus {
+    outline: none;
+}

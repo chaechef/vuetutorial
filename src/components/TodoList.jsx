@@ -3,6 +3,7 @@ import './TodoList.css';
 import Todo from './Todo';
 
 function TodoList() {
+
   return (
       <div className="todoList">
           <Todo name="1"/>
@@ -11,7 +12,6 @@ function TodoList() {
           <Todo name="4"/>
           <Todo name="5"/>
           <Todo name="6"/>
-
       </div>
   );
 }

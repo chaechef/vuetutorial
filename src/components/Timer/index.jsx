@@ -1,5 +1,5 @@
 import React from 'react';
-import './Timer.css'
+import './style.css'
 
 class CurrentTime extends React.Component {
   state = {
@@ -21,7 +21,6 @@ class CurrentTime extends React.Component {
   render() {
     return (
       <div className="Current_time">
-
         <h1>{this.state.date.toISOString()}</h1>
       </div>
     )

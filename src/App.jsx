@@ -11,8 +11,8 @@ function App() {
           <CurrentTime />
           <StartBtn />
       </header>
-      <section className="section">
-        <TodoList />
+      <section className="main">
+          <TodoList />
 
       </section>      
     </div>
