@@ -1,5 +1,5 @@
 .todoList {
-    background-color: tomato;
-    display: flex;
-    flex-direction: row-reverse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }

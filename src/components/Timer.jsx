@@ -22,7 +22,7 @@ class CurrentTime extends React.Component {
     return (
       <div className="Current_time">
 
-        <h1>{this.state.date.toISOString().replace(/([^T]+)T([^\.]+).*/g, '$1 $2') }</h1>
+        <h1>{this.state.date.toISOString()}</h1>
       </div>
     )
   }
