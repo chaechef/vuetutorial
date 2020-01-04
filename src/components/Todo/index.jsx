@@ -13,8 +13,8 @@ function Todo(props) {
           <br/>
           하루 : 100개
         </div>
-        <div className="inputNumber">
-          <input type="text" name="quantity"/>
+        <div className="todo-footer">
+          <input className="inputNumber" type="text" name="quantity"/>
           <button className="submitBtn">제출</button>
         </div>
       </div>

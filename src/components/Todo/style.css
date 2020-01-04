@@ -15,29 +15,44 @@
 }
 
 .todo .plan {
+  border-bottom: 1px solid black;
+  padding: 5px;
 }
 
 .submitBtn {
     background-color: tomato;
     color: #F6d55c;
     width: 60px;
-    height: 40px;
+    height: 25px;
     border: 1px solid #338033;
     font-size: 14px;
     border-radius: 10px;
     margin: 10px;
   }
+.todo-footer{
+  padding: 2px;
+}
 
-  .submitBtn {
+.submitBtn {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-  }
+}
   
-  .submitBtn:hover {
-    background-color: rgb(45, 132, 202); /* Green */
-    color: #F6d55c;
-  }
+.submitBtn:hover {
+  background-color: rgb(45, 132, 202); /* Green */
+  color: #F6d55c;
+}
 
-  .submitBtn:focus {
-    outline: none;
+.submitBtn:focus {
+  outline: none;
+}
+
+.inputNumber {
+  padding: 0;
+  border : 2px solid #20639B;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 180px;
+  height: 25px;
+  margin-left: 10px;
 }
