@@ -1,7 +1,7 @@
 import React from 'react';
-import './Current_time.css'
+import './Timer.css'
 
-class current_time extends React.Component {
+class CurrentTime extends React.Component {
   state = {
     date : new Date(),
   }
@@ -27,4 +27,4 @@ class current_time extends React.Component {
     )
   }
 }
-export default current_time;
+export default CurrentTime;
