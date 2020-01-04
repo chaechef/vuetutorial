@@ -1,18 +1,8 @@
 html body{
 }
-.Timer {
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-.StartBtn {
-  background-color: #20639B;
-  color: #F6d55c;
-  width: 240px;
-  height: 80px;
-  border: 1px solid #338033;
-  font-size: 18px;
-  border-radius: 4px;
-  margin: 10px;
 }

@@ -1,19 +1,20 @@
 import React from 'react';
 import './App.css';
-import CurrentTime from './components/Current_time';
+import CurrentTime from './components/Timer';
+import StartBtn from './components/StartBtn';
+import TodoList from './components/TodoList';
+
 function App() {
   return (
     <div>
-      <div className="Timer">
+      <header className="header">
           <CurrentTime />
-          <button className="StartBtn" type="button">
-              start!
-            </button>
-      </div>
-      <div className="todo">
-        
+          <StartBtn />
+      </header>
+      <section className="section">
+        <TodoList />
 
-      </div>      
+      </section>      
     </div>
   );
 }
