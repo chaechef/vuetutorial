@@ -20,7 +20,7 @@ class CurrentTime extends React.Component {
 }
   render() {
     return (
-      <div className="Current_time">
+      <div className="current-time">
         <h1>{this.state.date.toISOString()}</h1>
       </div>
     )

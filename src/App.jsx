@@ -13,7 +13,6 @@ function App() {
       </header>
       <section className="main">
           <TodoList />
-
       </section>      
     </div>
   );
