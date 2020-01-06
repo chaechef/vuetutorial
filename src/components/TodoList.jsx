@@ -11,16 +11,14 @@ function TodoList() {
     axios.get('http://localhost:8000/todos/')
     .then(res => {
       console.log(res.data)
+      todosSet(res.data)
     })
-  })
+  }, [])
   return (
       <div className="todoList">
-          <Todo name="1"/>
-          <Todo name="2"/>
-          <Todo name="3"/>
-          <Todo name="4"/>
-          <Todo name="5"/>
-          <Todo name="6"/>
+        {
+          Array.isArray(todos) ? {} : "456"
+        }
       </div>
   );
 }
