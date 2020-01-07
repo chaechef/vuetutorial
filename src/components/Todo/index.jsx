@@ -5,13 +5,13 @@ function Todo(props) {
   return (
       <div className="todo">
         <div className="stackTime">
-          누적량 : 2000개
+          누적량 : {props.todo.sum}
         </div>
         <div className="plan">
     
-          계획 : 팔굽혀펴기
+          계획 : {props.todo.name}
           <br/>
-          하루 : 100개
+          하루 : {props.todo.unit}
         </div>
         <div className="todo-footer">
           <input className="inputNumber" type="text" name="quantity"/>

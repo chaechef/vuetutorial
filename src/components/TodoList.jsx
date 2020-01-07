@@ -5,7 +5,7 @@ import Todo from './Todo';
 import axios from 'axios'
 
 function TodoList() {
-  const [todos, todosSet] = useState(null);
+  const [todos, todosSet] = useState([]);
 
   useEffect( () => {
     axios.get('http://localhost:8000/todos/')
@@ -17,7 +17,9 @@ function TodoList() {
   return (
       <div className="todoList">
         {
-          Array.isArray(todos) ? {} : "456"
+          todos.map((item, index) => {
+          return <Todo key={index} todo={item}/>  
+          })
         }
       </div>
   );
