@@ -3,6 +3,7 @@ import './App.css';
 import CurrentTime from './components/Timer';
 import StartBtn from './components/StartBtn';
 import TodoList from './components/TodoList';
+import PlusBtn from './components/plus-btn';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       </header>
       <section className="main">
           <TodoList />
+          <PlusBtn />
       </section>      
     </div>
   );

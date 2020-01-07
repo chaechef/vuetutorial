@@ -1,0 +1,25 @@
+.plus-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: red;
+    border: 1px solid red;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    color: white;
+    font-size: 40px;
+    transition: transform 100ms ease, box-shadow 200ms ease;
+    transform: scale(1);
+}
+
+.plus-button:active {
+    background-color: crimson;
+    transform: scale(0.9);
+}
+
+.plus-button:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.plus-button:focus {outline:0;}

@@ -3,7 +3,6 @@ import './style.css';
 import axios from 'axios'
 function Todo(props) {
   function updateDay(todo) {
-    console.log(todo.sum);
     axios.put('http://localhost:8000/todos/'+todo.id+'/', {
       name : todo.name,
       unit : todo.unit,
@@ -11,7 +10,8 @@ function Todo(props) {
       startDate : todo.startDate,
     })
     .then( res => {
-      window.location.reload()
+      props.updateTodo(res.data)
+      // window.location.reload()
     })
   }
   return (
