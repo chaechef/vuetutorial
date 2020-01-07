@@ -6,19 +6,24 @@
     border: 1px solid #338033;
     font-size: 18px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 20px;
+    transform: scale(1.0);
+    transition-property: background-color, transform;
+    transition-duration: 0.5s, 0.1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
   }
 
-  .StartBtn {
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-  }
-  
-  .StartBtn:hover {
-    background-color: rgb(45, 132, 202); /* Green */
-    color: #F6d55c;
-  }
+.StartBtn:hover {
+  background-color: rgba(32, 100, 155, 0.849); /* Green */
+  color: #F6d55c;
+  box-shadow: 0px 0px 5px 5px rgba(246, 213, 92, 0.459);
 
-  .StartBtn:focus {
-    outline: none;
+}
+.StartBtn:active{
+  transform: scale(0.9);
+}
+
+.StartBtn:focus {
+  outline: none;
 }

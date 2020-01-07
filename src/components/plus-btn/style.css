@@ -3,7 +3,7 @@
     height: 80px;
     border-radius: 50%;
     background-color: red;
-    border: 1px solid red;
+    border: 1px solid rgba(255, 0, 0, 0.445);
     position: absolute;
     bottom: 50px;
     right: 50px;
@@ -11,7 +11,21 @@
     font-size: 40px;
     transition: transform 100ms ease, box-shadow 200ms ease;
     transform: scale(1);
+
+    /* animation-name: my-animation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
 }
+
+/* @keyframes my-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} */
 
 .plus-button:active {
     background-color: crimson;
