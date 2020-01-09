@@ -1,0 +1,21 @@
+.create-form{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(248, 59, 59);
+    position: absolute;
+    width: 250px;
+    height: 160px;
+    right: 50px;
+    bottom: 140px;
+}
+.create-form-line {
+    margin: 10px;
+}
+.create-form-button {
+    width: 100px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.create-form-input{
+    border: 2px solid blue;
+}
