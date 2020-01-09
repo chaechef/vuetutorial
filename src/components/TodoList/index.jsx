@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import './TodoList.css';
-import Todo from './Todo';
+import './styles.css';
+import Todo from '../Todo';
 import axios from 'axios'
 
 function TodoList() {

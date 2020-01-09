@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './StartBtn.css';
+import './styles.css';
 
 function StartBtn() {
 
