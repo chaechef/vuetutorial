@@ -19,7 +19,7 @@ function App() {
       <section className="main">
           <TodoList />
           <PlusBtn setisToggleOn={setisToggleOn} toggle={isToggleOn}/>
-          <CreateForm toggle={isToggleOn}/>
+          <CreateForm toggle={isToggleOn} setisToggleOn={setisToggleOn}/>
       </section>      
     </div>
   );
