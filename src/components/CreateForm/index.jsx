@@ -1,19 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
+import axios from 'axios'
 function CreateForm(props) {
+    const [plan, planSet] = useState("")
+    const [unit, unitSet] = useState("")
+    function planHandleChange(e){
+        planSet(e.target.value)
+    }
+    function unitHandleChange(e){
+        unitSet(e.target.value)
+    }
+    function handleClick(e){
+        axios.post('http://localhost:8000/todos/', {
+            name: plan,
+            unit: unit,
+            sum: 0,
+            startDate: new Date()
+        })
+        .then(res => {
+            props.setisToggleOn(false)
+            window.location.reload(0)
+        }
+        )
+    }
     return(
         <div className="create">
             {props.toggle ? (
                 <div className="create-form">
-                    <div className="create-form-line">
-                        <label htmlFor="">계획 : </label>
-                        <input className="create-form-input" type="text"/>
-                    </div>
-                    <div className="create-form-line">
-                        <label htmlFor="">단위 : </label>
-                        <input className="create-form-input" type="text"/>
-                    </div>
-                    <button className="create-form-button">제출</button>
+                    <ul className="create-form-line">
+                        <li><label>plan </label>
+                        <span className="required">*</span>
+                        <input className="create-form-input" type="text" value={plan} onChange={planHandleChange}/>
+                        </li>
+
+                        <li>
+                        <label>unit </label>
+                        <span className="required">*</span>
+                        <input className="create-form-input" type="text" value={unit} onChange={unitHandleChange}/>
+
+                        </li>
+                        <li>
+                        <button className="create-form-button" onClick={handleClick}>제출</button>
+
+                        </li>
+                    </ul>
+
                 </div>
             ) :
             (
