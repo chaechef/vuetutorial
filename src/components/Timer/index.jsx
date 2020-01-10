@@ -1,29 +1,20 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './styles.css'
 
-class CurrentTime extends React.Component {
-  state = {
-    date : new Date(),
+const CurrentTime = () => {
+  const [date, dateSet] = useState(new Date())
+
+  const tick = () => {
+    dateSet(new Date())
   }
-  tick() {
-    this.setState({
-        date: new Date()
-    })
-  }
-  componentDidMount () {
-    this.timerID = setInterval(
-      () => this.tick(), 1000
-    )
-  }
-  componentWillUnmount() {
-    clearInterval(this.timerID)
-}
-  render() {
-    return (
+  useEffect(()=> {
+    setTimeout(tick, 1000)
+  },[date])
+
+  return (
       <div className="current-time">
-        <h1>{this.state.date.toISOString()}</h1>
+        <h1>{date.toISOString()}</h1>
       </div>
-    )
-  }
+  );
 }
 export default CurrentTime;

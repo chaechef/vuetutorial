@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import './style.css'
 import axios from 'axios'
-function CreateForm(props) {
+const CreateForm = ({toggle,setisToggleOn}) => {
     const [plan, planSet] = useState("")
     const [unit, unitSet] = useState("")
-    function planHandleChange(e){
+
+    const planHandleChange = (e) => {
         planSet(e.target.value)
     }
-    function unitHandleChange(e){
+
+    const unitHandleChange = (e) =>{
         unitSet(e.target.value)
     }
-    function handleClick(e){
+
+    const handleClick = (e) =>{
         axios.post('http://localhost:8000/todos/', {
             name: plan,
             unit: unit,
@@ -18,14 +21,14 @@ function CreateForm(props) {
             startDate: new Date()
         })
         .then(res => {
-            props.setisToggleOn(false)
+            setisToggleOn(false)
             window.location.reload(0)
-        }
-        )
+        })
     }
+
     return(
         <div className="create">
-            {props.toggle ? (
+            {toggle ? (
                 <div className="create-form">
                     <ul className="create-form-line">
                         <li><label>plan </label>

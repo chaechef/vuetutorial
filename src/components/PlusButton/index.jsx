@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './style.css';
 
-function plusBtn(props) {
+const plusBtn = ({toggle, setisToggleOn}) => {
 
   return (
       <div className="plus">
-            <button className="plus-button" type="button" onClick={()=> {props.setisToggleOn(!props.toggle) }}>
+            <button className="plus-button" type="button" onClick={()=> {setisToggleOn(!toggle) }}>
                 +
             </button>
       </div>

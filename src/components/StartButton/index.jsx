@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './styles.css';
 
-function StartBtn() {
+const StartBtn = () => {
 
   const [isToggleOn, setisToggleOn] = useState(false);
 
