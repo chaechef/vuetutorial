@@ -14,6 +14,14 @@ function Todo(props) {
       // window.location.reload()
     })
   }
+  function deleteTodo(todo) {
+    axios.delete('http://localhost:8000/todos/'+todo.id+'/')
+    .then( res => {
+      // props.updateTodo(res.data)
+      window.location.reload()
+    
+    })
+  }
   return (
       <div className="todo">
         <div className="stackTime">
@@ -27,6 +35,7 @@ function Todo(props) {
         </div>
         <div className="todo-footer">
           {/* <input className="inputNumber" type="text" name="quantity"/> */}
+          <button className="submitBtn"  onClick={(e) => { deleteTodo(props.todo) }}>삭제</button>
           <button className="submitBtn"  onClick={(e) => { updateDay(props.todo) }}>제출</button>
         </div>
       </div>
