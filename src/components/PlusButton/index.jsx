@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './style.css';
+import {ToggleContext} from '../../App.jsx'
 
-const plusBtn = ({toggle, setisToggleOn}) => {
+const PlusButton = () => {
+
+  const {isToggleOn, setisToggleOn} = useContext(ToggleContext)
 
   return (
       <div className="plus">
-            <button className="plus-button" type="button" onClick={()=> {setisToggleOn(!toggle) }}>
+            <button className="plus-button" type="button" onClick={()=> {setisToggleOn(!isToggleOn) }}>
                 +
             </button>
       </div>
   );
 }
 
-export default plusBtn;
+export default PlusButton;

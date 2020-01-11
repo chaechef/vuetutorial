@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './style.css'
 import axios from 'axios'
-const CreateForm = ({toggle,setisToggleOn, todos, todosSet}) => {
+import { TodoContext, ToggleContext } from '../../App'
+const CreateForm = () => {
+
+    const {todos, todosSet} = useContext(TodoContext)
+    const {isToggleOn,setisToggleOn} = useContext(ToggleContext)
+
     const [plan, planSet] = useState("")
     const [unit, unitSet] = useState("")
 
@@ -34,7 +39,7 @@ const CreateForm = ({toggle,setisToggleOn, todos, todosSet}) => {
 
     return(
         <div className="create">
-            {toggle ? (
+            {isToggleOn ? (
                 <div className="create-form">
                     <ul className="create-form-line">
                         <li><label>plan </label>

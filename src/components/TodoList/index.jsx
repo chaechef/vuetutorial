@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './styles.css';
 import Todo from '../Todo';
+import {TodoContext} from '../../App.jsx';
 
-const TodoList = ({todos, todosSet}) => {
-  
+const TodoList = () => {
+
+  const {todos, todosSet} = useContext(TodoContext)
 
   const updateTodo = (newTodo) =>{
     const newTodos = [...todos]
@@ -12,16 +14,20 @@ const TodoList = ({todos, todosSet}) => {
     todosSet(newTodos)
   }
 
-
-
   return (
-      <div className="todoList">
-        {
-          todos.map((item, index) => {
-          return <Todo key={index} todo={item} updateTodo={updateTodo} todos={todos} todosSet={todosSet} />  
-          })
-        }
-      </div>
+    <div className="todoList">
+      {
+        todos.length === 0 ? (
+          <div>No Data</div>
+          ) : (
+            
+          todos.map( todo => {
+          return <Todo todo={todo} updateTodo={updateTodo} />
+        }))
+      }
+
+            
+    </div>
   );
 }
 

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './style.css';
 import axios from 'axios'
+import {TodoContext} from '../../App.jsx'
+const Todo = ({todo, updateTodo}) => {
 
-const Todo = ({todo, updateTodo, todos, todosSet}) => {
+  const {todos, todosSet} = useContext(TodoContext)
 
   const updateDay = (todo) => {
     axios.put('http://localhost:8000/todos/'+todo.id+'/', {

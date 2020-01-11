@@ -1,15 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect } from 'react';
 import './App.css';
 import CurrentTime from './components/Timer';
-import StartBtn from './components/StartButton';
+import StartButton from './components/StartButton';
 import TodoList from './components/TodoList';
-import PlusBtn from './components/PlusButton';
+import PlusButton from './components/PlusButton';
 import CreateForm from './components/CreateForm';
 import axios from 'axios';
 
-const App = () => {
-  const [todos, todosSet] = useState([]);
 
+export const TodoContext = React.createContext();
+export const ToggleContext = React.createContext();
+
+const App = () => {
+
+  const [todos, todosSet] = useState([]);
   const [isToggleOn, setisToggleOn] = useState(false);
 
   const fetchTodo = () => {
@@ -24,17 +28,19 @@ const App = () => {
   }, [])
 
   return (
-    <div>
-      <header className="header">
-          <CurrentTime />
-          <StartBtn />
-      </header>
-      <section className="main">
-          <TodoList todos={todos} todosSet={todosSet}/>
-          <PlusBtn setisToggleOn={setisToggleOn} toggle={isToggleOn}/>
-          <CreateForm toggle={isToggleOn} setisToggleOn={setisToggleOn} todos={todos} todosSet={todosSet}/>
-      </section>      
-    </div>
+    <TodoContext.Provider value={{todos, todosSet}}>
+        <header className="header">
+            <CurrentTime />
+            <StartButton />
+        </header>
+        <section className="main">
+            <TodoList/>
+            <ToggleContext.Provider value={{isToggleOn, setisToggleOn}}>
+              <PlusButton/>
+              <CreateForm/>
+            </ToggleContext.Provider>
+        </section>      
+    </TodoContext.Provider>
   );
 }
 

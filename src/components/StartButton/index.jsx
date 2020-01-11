@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './styles.css';
 
-const StartBtn = () => {
+const StartButton = () => {
 
   const [isToggleOn, setisToggleOn] = useState(false);
 
@@ -14,4 +14,4 @@ const StartBtn = () => {
   );
 }
 
-export default StartBtn;
+export default StartButton;
