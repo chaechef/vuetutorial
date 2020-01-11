@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import axios from 'axios'
+
 const Todo = ({todo, updateTodo}) => {
 
   const updateDay = (todo) => {
@@ -19,8 +20,8 @@ const Todo = ({todo, updateTodo}) => {
     axios.delete('http://localhost:8000/todos/'+todo.id+'/')
     .then( res => {
       // props.updateTodo(res.data)
-      window.location.reload()
-    
+      // window.location.reload()
+      console.log(res)
     })
   }
   return (

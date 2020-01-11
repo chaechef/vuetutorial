@@ -1,25 +1,19 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import './styles.css';
 import Todo from '../Todo';
-import axios from 'axios'
 
-function TodoList() {
-  const [todos, todosSet] = useState([]);
+const TodoList = ({todos, todosSet}) => {
+  
 
-  function updateTodo(newTodo) {
+  const updateTodo = (newTodo) =>{
     const newTodos = [...todos]
     const index = newTodos.findIndex(todo => todo.id === newTodo.id)
     newTodos[index] = newTodo
     todosSet(newTodos)
   }
 
-  useEffect( () => {
-    axios.get('http://localhost:8000/todos/')
-    .then(res => {
-      todosSet(res.data)
-    })
-  }, [])
+
+
   return (
       <div className="todoList">
         {

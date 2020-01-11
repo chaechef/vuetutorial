@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './style.css'
 import axios from 'axios'
-const CreateForm = ({toggle,setisToggleOn}) => {
+const CreateForm = ({toggle,setisToggleOn, todos, todosSet}) => {
     const [plan, planSet] = useState("")
     const [unit, unitSet] = useState("")
 
@@ -14,15 +14,21 @@ const CreateForm = ({toggle,setisToggleOn}) => {
     }
 
     const handleClick = (e) =>{
-        axios.post('http://localhost:8000/todos/', {
+        const newTodo = {
             name: plan,
             unit: unit,
             sum: 0,
             startDate: new Date()
+        }
+        axios.post('http://localhost:8000/todos/', {
+            ...newTodo
         })
         .then(res => {
+            const newTodos = [...todos, res.data]
             setisToggleOn(false)
-            window.location.reload(0)
+            todosSet(newTodos)
+            planSet("")
+            unitSet("")
         })
     }
 
