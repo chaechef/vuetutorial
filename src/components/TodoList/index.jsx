@@ -18,7 +18,7 @@ const TodoList = ({todos, todosSet}) => {
       <div className="todoList">
         {
           todos.map((item, index) => {
-          return <Todo key={index} todo={item} updateTodo={updateTodo} />  
+          return <Todo key={index} todo={item} updateTodo={updateTodo} todos={todos} todosSet={todosSet} />  
           })
         }
       </div>

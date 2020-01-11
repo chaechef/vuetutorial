@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import axios from 'axios'
 
-const Todo = ({todo, updateTodo}) => {
+const Todo = ({todo, updateTodo, todos, todosSet}) => {
 
   const updateDay = (todo) => {
     axios.put('http://localhost:8000/todos/'+todo.id+'/', {
@@ -13,17 +13,18 @@ const Todo = ({todo, updateTodo}) => {
     })
     .then( res => {
       updateTodo(res.data)
-      // window.location.reload()
     })
   }
   const deleteTodo = (todo) => {
     axios.delete('http://localhost:8000/todos/'+todo.id+'/')
     .then( res => {
-      // props.updateTodo(res.data)
-      // window.location.reload()
-      console.log(res)
+      const newTodos = [...todos]
+      const index = newTodos.findIndex(v => v.id === todo.id)
+      newTodos.splice(index,1)
+      todosSet(newTodos)
     })
   }
+
   return (
       <div className="todo">
         <div className="stackTime">
@@ -35,7 +36,6 @@ const Todo = ({todo, updateTodo}) => {
           하루 : {todo.unit}
         </div>
         <div className="todo-footer">
-          {/* <input className="inputNumber" type="text" name="quantity"/> */}
           <button className="submitBtn"  onClick={(e) => { deleteTodo(todo) }}>삭제</button>
           <button className="submitBtn"  onClick={(e) => { updateDay(todo) }}>제출</button>
         </div>
