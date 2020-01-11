@@ -4,7 +4,7 @@
     border-radius: 50%;
     background-color: #63ace5;
     border: 1px solid #63ace5;
-    position: absolute;
+    position: fixed;
     bottom: 50px;
     right: 50px;
     color: white;

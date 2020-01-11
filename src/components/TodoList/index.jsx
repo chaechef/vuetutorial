@@ -22,7 +22,7 @@ const TodoList = () => {
           ) : (
             
           todos.map( todo => {
-          return <Todo todo={todo} updateTodo={updateTodo} />
+          return <Todo key={todo.id} todo={todo} updateTodo={updateTodo} />
         }))
       }
 

@@ -1,8 +1,10 @@
 .create-form{
     display: flex;
     flex-direction: column;
-    background-color:  #8b9dc3  ;
-    position: absolute;
+    background-color:  rgb(137, 155, 194, 0.7)  ;
+    /* background-color: rgba(256, 256, 256, 0.5); */
+    backdrop-filter: blur(20px);
+    position: fixed;
     width: 250px;
     height: 160px;
     right: 50px;
