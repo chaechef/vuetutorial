@@ -5,6 +5,8 @@ class Todo(models.Model):
     unit = models.IntegerField()
     sum = models.IntegerField()
     startDate = models.DateTimeField()
+    updateDate = models.DateTimeField()
+    
     def __str__(self): 
         return self.name
 
