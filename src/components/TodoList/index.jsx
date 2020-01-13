@@ -17,6 +17,7 @@ const TodoList = () => {
   return (
     <div className="todoList">
       {
+        
         todos.length === 0 ? (
           <div>No Data</div>
           ) : (

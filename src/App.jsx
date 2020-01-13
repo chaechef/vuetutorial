@@ -7,19 +7,21 @@ import PlusButton from './components/PlusButton';
 import CreateForm from './components/CreateForm';
 import axios from 'axios';
 
-
 export const TodoContext = React.createContext();
 export const ToggleContext = React.createContext();
+export const TimerContext = React.createContext();
 
 const App = () => {
 
   const [todos, todosSet] = useState([]);
   const [isToggleOn, setisToggleOn] = useState(false);
 
+
   const fetchTodo = () => {
     axios.get('http://localhost:8000/todos/')
     .then(res => {
       todosSet(res.data)
+      console.log(res.data)
     })
   }
 

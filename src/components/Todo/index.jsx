@@ -8,10 +8,9 @@ const Todo = ({todo, updateTodo}) => {
 
   const updateDay = (todo) => {
     axios.put('http://localhost:8000/todos/'+todo.id+'/', {
-      name : todo.name,
-      unit : todo.unit,
+      ...todo,
       sum : todo.sum + todo.unit,
-      startDate : todo.startDate,
+      updateDate: new Date()
     })
     .then( res => {
       updateTodo(res.data)
@@ -36,6 +35,11 @@ const Todo = ({todo, updateTodo}) => {
           계획 : {todo.name}
           <br/>
           하루 : {todo.unit}
+          <br></br>
+          {todo.startDate}
+          <br>
+          </br>
+{todo.updateDate}
         </div>
         <div className="todo-footer">
           <button className="submitBtn"  onClick={(e) => { deleteTodo(todo) }}>삭제</button>
