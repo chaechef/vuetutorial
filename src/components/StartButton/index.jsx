@@ -3,12 +3,12 @@ import './styles.css';
 
 const StartButton = () => {
 
-  const [isToggleOn, setisToggleOn] = useState(false);
+  const [editToggle, setEditToggle] = useState(false);
 
   return (
       <div className="start">
-            <button className="StartBtn" type="button" onClick={() => setisToggleOn(!isToggleOn)}>
-               {isToggleOn ? "true" : "false"}
+            <button className="StartBtn" type="button" onClick={() => setEditToggle(!editToggle)}>
+               {editToggle ? "done" : "setting"}
             </button>
       </div>
   );

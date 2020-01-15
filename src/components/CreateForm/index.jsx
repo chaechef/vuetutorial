@@ -4,7 +4,7 @@ import axios from 'axios'
 import { TodoContext, ToggleContext } from '../../App'
 const CreateForm = () => {
 
-    const {todos, todosSet} = useContext(TodoContext)
+    const {todos, setTodos} = useContext(TodoContext)
     const {isToggleOn,setisToggleOn} = useContext(ToggleContext)
 
     const [plan, planSet] = useState("")
@@ -19,11 +19,14 @@ const CreateForm = () => {
     }
 
     const handleClick = (e) =>{
+        const today = new Date()
+        const yester = new Date(today.setDate(today.getDate()-1))
         const newTodo = {
             name: plan,
             unit: unit,
             sum: 0,
-            startDate: new Date()
+            startDate: today,
+            updateDate: yester ,
         }
         axios.post('http://localhost:8000/todos/', {
             ...newTodo
@@ -31,7 +34,7 @@ const CreateForm = () => {
         .then(res => {
             const newTodos = [...todos, res.data]
             setisToggleOn(false)
-            todosSet(newTodos)
+            setTodos(newTodos)
             planSet("")
             unitSet("")
         })
