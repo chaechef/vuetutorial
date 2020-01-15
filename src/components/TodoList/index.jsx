@@ -5,13 +5,13 @@ import {TodoContext} from '../../App.jsx';
 
 const TodoList = () => {
 
-  const {todos, todosSet} = useContext(TodoContext)
+  const {todos, setTodos} = useContext(TodoContext)
 
   const updateTodo = (newTodo) =>{
     const newTodos = [...todos]
     const index = newTodos.findIndex(todo => todo.id === newTodo.id)
     newTodos[index] = newTodo
-    todosSet(newTodos)
+    setTodos(newTodos)
   }
 
   return (

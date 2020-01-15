@@ -1,11 +1,11 @@
 .create-form{
     display: flex;
     flex-direction: column;
-    background-color:  rgb(137, 155, 194, 0.7)  ;
+    background-color:  rgba(148, 176, 235, 0.7)  ;
     /* background-color: rgba(256, 256, 256, 0.5); */
     backdrop-filter: blur(20px);
     position: fixed;
-    width: 250px;
+    width: 220px;
     height: 160px;
     right: 50px;
     bottom: 140px;
@@ -13,7 +13,7 @@
     border-radius: 10px;
 }
 .create-form-line {
-    margin: 10px;
+    margin-left: -5px;
 }
 .create-form-button {
     width: 100px;
@@ -21,9 +21,10 @@
     margin-right: 20%;
     width: 60px;
     border-radius: 4px;
-    background-color: #63ace5;
-    border: 1px solid #63ace5;
+    background-color: #31a6ff;
+    border: 1px solid #31a6ff;
     color: white;
+    margin-top: 15px;
 }
 .create-form-button:focus {
     outline:none;
