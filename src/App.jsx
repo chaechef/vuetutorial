@@ -13,15 +13,14 @@ export const TimerContext = React.createContext();
 
 const App = () => {
 
-  const [todos, todosSet] = useState([]);
+  const [todos, setTodos] = useState([]);
   const [isToggleOn, setisToggleOn] = useState(false);
-
+  const [editToggle, setEditToggle] = useState(false);
 
   const fetchTodo = () => {
     axios.get('http://localhost:8000/todos/')
     .then(res => {
-      todosSet(res.data)
-      console.log(res.data)
+      setTodos(res.data)
     })
   }
 
@@ -30,10 +29,11 @@ const App = () => {
   }, [])
 
   return (
-    <TodoContext.Provider value={{todos, todosSet}}>
+    <TodoContext.Provider value={{todos, setTodos, editToggle, setEditToggle}}>
         <header className="header">
             <CurrentTime />
-            <StartButton />
+            {/* <StartButton /> */}
+            <br></br>
         </header>
         <section className="main">
             <TodoList/>
