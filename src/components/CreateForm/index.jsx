@@ -6,9 +6,9 @@ const CreateForm = () => {
 
     const {todos, setTodos} = useContext(TodoContext)
     const {isToggleOn,setisToggleOn} = useContext(ToggleContext)
+    const {plan, planSet} = useContext(ToggleContext)
+    const {unit, unitSet} = useContext(ToggleContext)
 
-    const [plan, planSet] = useState("")
-    const [unit, unitSet] = useState("")
 
     const planHandleChange = (e) => {
         planSet(e.target.value)

@@ -17,6 +17,10 @@ const App = () => {
   const [isToggleOn, setisToggleOn] = useState(false);
   const [editToggle, setEditToggle] = useState(false);
 
+  
+  const [plan, planSet] = useState("")
+  const [unit, unitSet] = useState("")
+
   const fetchTodo = () => {
     axios.get('http://localhost:8000/todos/')
     .then(res => {
@@ -37,7 +41,7 @@ const App = () => {
         </header>
         <section className="main">
             <TodoList/>
-            <ToggleContext.Provider value={{isToggleOn, setisToggleOn}}>
+            <ToggleContext.Provider value={{isToggleOn, setisToggleOn, plan, planSet, unit, unitSet}}>
               <PlusButton/>
               <CreateForm/>
             </ToggleContext.Provider>
