@@ -1,4 +1,4 @@
-.StartBtn {
+.count-button {
     background-color: #20639B;
     color: #F6d55c;
     width: 240px;
@@ -14,16 +14,16 @@
     transition-delay: 0s;
   }
 
-.StartBtn:hover {
+.count-button:hover {
   background-color: rgba(32, 100, 155, 0.849); /* Green */
   color: #F6d55c;
   box-shadow: 0px 0px 5px 5px rgba(246, 213, 92, 0.459);
 
 }
-.StartBtn:active{
+.count-button:active{
   transform: scale(0.9);
 }
 
-.StartBtn:focus {
+.count-button:focus {
   outline: none;
 }

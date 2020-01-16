@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import './App.css';
 import CurrentTime from './components/Timer';
-import StartButton from './components/StartButton';
+import CountButton from './components/CountButton';
 import TodoList from './components/TodoList';
 import PlusButton from './components/PlusButton';
 import CreateForm from './components/CreateForm';
@@ -36,7 +36,7 @@ const App = () => {
     <TodoContext.Provider value={{todos, setTodos, editToggle, setEditToggle}}>
         <header className="header">
             <CurrentTime />
-            {/* <StartButton /> */}
+            <CountButton />
             <br></br>
         </header>
         <section className="main">

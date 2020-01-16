@@ -40,7 +40,7 @@ const Todo = ({todo, updateTodo}) => {
 
         </div>
         <div className="todo-footer">
-          <button className="submitBtn"  onClick={(e) => { deleteTodo(todo) }}>삭제</button>
+          {/* <button className="submitBtn"  onClick={(e) => { deleteTodo(todo) }}>삭제</button> */}
           {dayjs(todo.updateDate).format('YYYY MM-DD') === dayjs(new Date()).format('YYYY MM-DD') ? (
             <div></div>
           ) :(
