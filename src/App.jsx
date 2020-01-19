@@ -17,7 +17,6 @@ const App = () => {
   const [isToggleOn, setisToggleOn] = useState(false);
   const [editToggle, setEditToggle] = useState(false);
 
-  
   const [plan, planSet] = useState("")
   const [unit, unitSet] = useState("")
 

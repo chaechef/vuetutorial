@@ -3,7 +3,6 @@ import './styles.css';
 
 const CountButton = () => {
 
-  const [editToggle, setEditToggle] = useState(false);
   const [count, setCount] = useState(0);
   return (
       <div className="count">
