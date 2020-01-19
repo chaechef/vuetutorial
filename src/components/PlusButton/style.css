@@ -2,8 +2,8 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #2e61f0;
-    border: 1px solid #63ace5;
+    background-color: #DB5461;
+    border: 1px solid #DB5461;
     position: fixed;
     bottom: 50px;
     right: 50px;
@@ -28,7 +28,7 @@
 } */
 
 .plus-button:active {
-    background-color: #4b86b4;
+    background-color: rgb(155, 60, 69);
     transform: scale(0.9);
 }
 
