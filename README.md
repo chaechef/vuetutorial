@@ -1,6 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Stack Life! 
+
+stack Life is a project about todo management
+
+### ScreenShot
+<div>
+<img src="https://user-images.githubusercontent.com/46335714/72749351-cc27b700-3b87-11ea-89db-a30c095ae707.PNG">
+</div>
 
 In the project directory, you can run:
 
