@@ -38,7 +38,7 @@ python ./manage.py runserver
 ### frontend
 
 ```
-cd frontend
+cd .. 
 npm install
 npm start
 ```
