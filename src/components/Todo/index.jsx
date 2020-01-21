@@ -31,12 +31,12 @@ const Todo = ({todo, updateTodo}) => {
   return (
       <div className="todo">
         <div className="stackTime">
-          누적량 : {todo.sum}
+          sum : {todo.sum}
         </div>
         <div className="plan">
-          계획 : {todo.name}
+          plan : {todo.name}
           <br/>
-          하루 : {todo.unit}
+          one day : {todo.unit}
 
         </div>
         <div className="todo-footer">

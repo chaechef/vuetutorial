@@ -51,7 +51,7 @@ const CreateForm = () => {
                         </li>
 
                         <li>
-                        <label>unit </label>
+                        <label>one day </label>
                         <span className="required">*</span>
                         <input className="create-form-input" type="text" value={unit} onChange={unitHandleChange}/>
 
