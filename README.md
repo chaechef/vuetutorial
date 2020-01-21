@@ -5,7 +5,7 @@ stack Life is a project about todo management
 
 ### ScreenShot
 <div>
-<img src="https://user-images.githubusercontent.com/46335714/72749351-cc27b700-3b87-11ea-89db-a30c095ae707.PNG">
+<img src="https://user-images.githubusercontent.com/46335714/72772619-72001380-3bd2-11ea-88c0-ec540995d232.png">
 </div>
 
 In the project directory, you can run:
