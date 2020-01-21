@@ -20,8 +20,7 @@ const TodoList = () => {
         
         todos.length === 0 ? (
           <div>No Data</div>
-          ) : (
-            
+          ) : (  
           todos.map( todo => {
           return <Todo key={todo.id} todo={todo} updateTodo={updateTodo} />
         }))

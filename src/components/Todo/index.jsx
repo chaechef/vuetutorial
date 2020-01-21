@@ -44,7 +44,7 @@ const Todo = ({todo, updateTodo}) => {
           {dayjs(todo.updateDate).format('YYYY MM-DD') === dayjs(new Date()).format('YYYY MM-DD') ? (
             <div></div>
           ) :(
-            <button className="submitBtn"  onClick={(e) => { updateDay(todo) }}>제출</button>
+            <button className="submitBtn"  onClick={(e) => { updateDay(todo) }}>submit</button>
           ) }
 
         </div>
