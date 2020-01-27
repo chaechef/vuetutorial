@@ -1,5 +1,7 @@
 .todoList {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  align-items: center;
+  justify-content: center;
 }
