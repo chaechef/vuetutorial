@@ -1,7 +1,8 @@
 
 ## Stack Life! 
 
-stack Life is a project about todo management
+stack Life is a project about todo management 
+backend : django frontend : react
 
 ### ScreenShot
 <div>
