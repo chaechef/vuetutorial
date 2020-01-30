@@ -1,14 +1,13 @@
 
 ## Stack Life! 
 
-stack Life is a project about todo management
+stack Life is a project about todo management 
+backend : django frontend : react
 
 ### ScreenShot
 <div>
-<img src="https://user-images.githubusercontent.com/46335714/72772619-72001380-3bd2-11ea-88c0-ec540995d232.png">
+<img src="https://user-images.githubusercontent.com/46335714/73329993-727d5780-422d-11ea-9878-5d18b5d1164b.png">
 </div>
-
-In the project directory, you can run:
 
 ### Backend
 Make & Activate Virtual env:-
