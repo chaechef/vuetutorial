@@ -1,22 +1,22 @@
-import React, {useState, useEffect} from 'react';
-import './styles.css'
-import dayjs from 'dayjs'
+import React, { useState, useEffect } from 'react';
+import './styles.css';
+import dayjs from 'dayjs';
 
 const CurrentTime = () => {
-  const [date, dateSet] = useState(new Date())
+  const [date, dateSet] = useState(86400);
 
   const tick = () => {
-    dateSet(new Date())
-  }
-  
-  useEffect(()=> {
-    setTimeout(tick, 1000)
-  },[date])
+    dateSet(dayjs().hour() * 3600 + dayjs().minute() * 60 + dayjs().second());
+  };
+
+  useEffect(() => {
+    setTimeout(tick, 1000);
+  }, [date]);
 
   return (
-      <div className="current-time">
-        <h1>{dayjs().format('YYYY MM-DD HH:mm:ss')}</h1>
-      </div>
+    <div className="current-time">
+      <h1>remain second : {86400 - date}</h1>
+    </div>
   );
-}
+};
 export default CurrentTime;
