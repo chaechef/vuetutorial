@@ -15,7 +15,7 @@ const CurrentTime = () => {
 
   return (
     <div className="current-time">
-      <h1>remain second : {86400 - date}</h1>
+      <h1>remain : {86400 - date}</h1>
     </div>
   );
 };

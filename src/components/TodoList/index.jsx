@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import './styles.css';
 import Todo from '../Todo';
-import TodoBeta from '../TodoBeta';
 import { TodoContext } from '../../App.jsx';
 
 const TodoList = () => {
@@ -20,7 +19,7 @@ const TodoList = () => {
         <div>No Data</div>
       ) : (
         todos.map(todo => {
-          return <TodoBeta key={todo.id} todo={todo} updateTodo={updateTodo} />;
+          return <Todo key={todo.id} todo={todo} updateTodo={updateTodo} />;
         })
       )}
     </div>

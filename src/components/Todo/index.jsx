@@ -1,21 +1,33 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './style.css';
+import dayjs from 'dayjs';
 import axios from 'axios';
 import { TodoContext } from '../../App.jsx';
-import dayjs from 'dayjs';
-
-const Todo = ({ todo, updateTodo }) => {
-  const { todos, setTodos, editToggle } = useContext(TodoContext);
+const TodoBeta = ({ todo, updateTodo }) => {
+  const { todos, setTodos } = useContext(TodoContext);
+  const [inputValue, setInputValue] = useState('');
+  const [animate, setAnimate] = useState(false);
+  const [done, setDone] = useState(
+    dayjs(todo.updateDate).format('YYYY MM-DD') ===
+      dayjs(new Date()).format('YYYY MM-DD')
+  );
 
   const updateDay = todo => {
+    const inputValueNum = parseInt(inputValue);
+
     axios
       .put('http://localhost:8000/todos/' + todo.id + '/', {
         ...todo,
-        sum: todo.sum + todo.unit,
+        sum: todo.sum + inputValueNum,
         updateDate: new Date()
       })
       .then(res => {
         updateTodo(res.data);
+        setAnimate(true);
+        setTimeout(() => {
+          setAnimate(false);
+        }, 500);
+        setDone(true);
       });
   };
   const deleteTodo = todo => {
@@ -26,40 +38,44 @@ const Todo = ({ todo, updateTodo }) => {
       setTodos(newTodos);
     });
   };
-
   return (
-    <div className="todo">
-      <div className="stackTime">sum : {todo.sum}</div>
-      <div className="plan">
-        plan : {todo.name}
-        <br />
-        one day : {todo.unit}
-      </div>
-      <div className="todo-footer">
-        <button
-          className="submitBtn"
-          onClick={e => {
-            deleteTodo(todo);
-          }}
-        >
-          delete
-        </button>
-        {dayjs(todo.updateDate).format('YYYY MM-DD') ===
-        dayjs(new Date()).format('YYYY MM-DD') ? (
-          <div></div>
+    <>
+      <div
+        className={`todo-front${animate ? ' animate-rotate' : ''}${
+          done ? ' done' : ''
+        }`}
+      >
+        {done ? (
+          <div>
+            {' '}
+            <div className="plan-res">{todo.name}</div>
+            <div className="sum">{todo.sum}</div>
+          </div>
         ) : (
-          <button
-            className="submitBtn"
-            onClick={e => {
-              updateDay(todo);
-            }}
-          >
-            submit
-          </button>
+          <>
+            <div className="plan">{todo.name}</div>
+            <div className="min">{todo.unit}</div>
+            <input
+              type="text"
+              value={inputValue}
+              onChange={e => {
+                setInputValue(e.target.value);
+              }}
+            />
+            <button
+              className="submit"
+              onClick={e => {
+                updateDay(todo);
+              }}
+            >
+              submit
+            </button>
+          </>
         )}
       </div>
-    </div>
+      {/* <div className="todo-back">123123</div> */}
+    </>
   );
 };
 
-export default Todo;
+export default TodoBeta;
