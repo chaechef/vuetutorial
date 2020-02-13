@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
-import './style.css';
 import dayjs from 'dayjs';
 import axios from 'axios';
 import { TodoContext } from '../../App.jsx';
+import './style.scss';
 const TodoBeta = ({ todo, updateTodo }) => {
   const { todos, setTodos } = useContext(TodoContext);
   const [inputValue, setInputValue] = useState('');
