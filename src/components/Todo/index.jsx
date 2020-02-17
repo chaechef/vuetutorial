@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import axios from 'axios';
-import { TodoContext } from '../../App.jsx';
+// import { TodoContext } from '../../App.jsx';
 import './style.scss';
 const TodoBeta = ({ todo, updateTodo }) => {
-  const { todos, setTodos } = useContext(TodoContext);
+  // const { todos, setTodos } = useContext(TodoContext);
   const [inputValue, setInputValue] = useState('');
   const [animate, setAnimate] = useState(false);
   const [done, setDone] = useState(
@@ -30,14 +30,14 @@ const TodoBeta = ({ todo, updateTodo }) => {
         setDone(true);
       });
   };
-  const deleteTodo = todo => {
-    axios.delete('http://localhost:8000/todos/' + todo.id + '/').then(res => {
-      const newTodos = [...todos];
-      const index = newTodos.findIndex(v => v.id === todo.id);
-      newTodos.splice(index, 1);
-      setTodos(newTodos);
-    });
-  };
+  // const deleteTodo = todo => {
+  //   axios.delete('http://localhost:8000/todos/' + todo.id + '/').then(res => {
+  //     const newTodos = [...todos];
+  //     const index = newTodos.findIndex(v => v.id === todo.id);
+  //     newTodos.splice(index, 1);
+  //     setTodos(newTodos);
+  //   });
+  // };
   return (
     <>
       <div
@@ -47,7 +47,6 @@ const TodoBeta = ({ todo, updateTodo }) => {
       >
         {done ? (
           <div>
-            {' '}
             <div className="plan-res">{todo.name}</div>
             <div className="sum">{todo.sum}</div>
           </div>

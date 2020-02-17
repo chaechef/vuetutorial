@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import './style.scss';
 import axios from 'axios';
 import { TodoContext, ToggleContext } from '../../App';
